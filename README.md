@@ -7,7 +7,7 @@ Status: Work In Progress
  
   Basic | Spec Sheet
  -------:|:-------------------------
- SoC | Qualcomm SDM450 Snapdragon 450
+ SoC | Qualcomm MSM8953 Snapdragon 450
  CPU | Octa core (1.8 GHz)
  GPU | Adreno 506
  Memory | 1 - 4 GB RAM

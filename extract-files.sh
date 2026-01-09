@@ -26,10 +26,10 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib/libsec-ril.so)
+        vendor/lib*/libsec-ril.so)
             sed -i 's/ril.dds.call.slotid/vendor.calls.slotid/g' "${2}"
             ;;
-        vendor/lib/libsec-ril-dsds.so)
+        vendor/lib*/libsec-ril-dsds.so)
             sed -i 's/ril.dds.call.slotid/vendor.calls.slotid/g' "${2}"
             ;;
     esac

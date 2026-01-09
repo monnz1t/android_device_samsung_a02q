@@ -39,10 +39,6 @@ service swapon /sbin/sswap -s -z -f 1536
     seclabel u:r:sswap:s0
     oneshot
 
-# tracking activation VNG
-on property:ro.csc.sales_code=XXV
-    tracking_activation_VNG
-
 # SIMLock Daemon
 service rsudaemon /system/bin/rsudaemon
     class core
