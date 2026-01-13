@@ -160,6 +160,7 @@ endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # RIL
+BOARD_PROVIDES_LIBRIL := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # FM
@@ -218,10 +219,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-ENABLE_VENDOR_RIL_SERVICE := true
 
 # TODO: SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
