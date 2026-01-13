@@ -54,10 +54,9 @@ PRODUCT_PACKAGES += \
     fstab.boot.qcom \
     fstab.qcom \
     zram.fstab \
-    init.vendor.rilchip.rc \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
-	init.a02s.rc \
+	init.a02q.rc \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
@@ -237,8 +236,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
-    power.qcom
+    android.hardware.power@1.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -256,6 +254,10 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # RIL
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.epdg.support=true \
+    ro.radio.noril=no
+
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
@@ -311,15 +313,15 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
 # For userdebug builds
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.adb.secure=0 \
 	ro.debuggable=1 \
 	persist.sys.root_access=1 \
 	persist.service.adb.enable=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb
 
 # Call the proprietary setup
-$(call inherit-product, vendor/samsung/a02s/a02s-vendor.mk)
+$(call inherit-product, vendor/samsung/a02q/a02q-vendor.mk)

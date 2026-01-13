@@ -6,6 +6,9 @@ product/lib/vendor.qti.hardware.fm@1.0.so
 # Bluetooth-AptX
 lib/libaptX_encoder.so
 
+# TimeServices
+-vendor/app/TimeService/TimeService.apk
+
 # Prebuilt Modules
 vendor/lib/modules/audio_adsp_loader.ko
 vendor/lib/modules/audio_analog_cdc.ko
@@ -48,7 +51,6 @@ vendor/bin/cnd
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/bin/cplay
-#vendor/bin/create_factory_efs_file
 vendor/bin/diag_callback_sample
 vendor/bin/diag_dci_sample
 vendor/bin/diag_klog
@@ -88,29 +90,22 @@ vendor/bin/hw/android.hardware.health@2.0-service.samsung
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/bin/hw/android.hardware.media.omx@1.0-service
-vendor/bin/hw/android.hardware.memtrack@1.0-service
-vendor/bin/hw/android.hardware.nfc@1.2-service.sec
+#vendor/bin/hw/android.hardware.memtrack@1.0-service
 #vendor/bin/hw/android.hardware.power@1.0-service
 vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/bin/hw/android.hardware.thermal@1.0-service
-#vendor/bin/hw/android.hardware.usb@1.1-service.wahoo
 #vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
 vendor/bin/hw/android.hardware.wifi@1.0-service
 #vendor/bin/hw/capabilityconfigstoretest
 #vendor/bin/hw/hostapd
-#vendor/bin/hw/interfaces.factoryInterface@1.0-service
 vendor/bin/hw/macloader
 #vendor/bin/hw/mfgloader
 vendor/bin/hw/rild
 vendor/bin/hw/vendor.display.color@1.0-service
-#vendor/bin/hw/vendor.microtrust.hardware.ifaa@1.0-service
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
-#vendor/bin/hw/vendor.qti.hardware.cryptfshw@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
-#vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-#vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 #vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
@@ -118,15 +113,9 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 #vendor/bin/hw/vendor.samsung.hardware.media.converter@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.miscpower@2.0-service
 #vendor/bin/hw/vendor.samsung.hardware.security.drk@2.0-service
-#vendor/bin/hw/vendor.samsung.hardware.vibrator@2.0-service
 #vendor/bin/hw/vendor.samsung.hardware.vibrator@2.1-service
 #vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
-#vendor/bin/hw/wosface.hardware.biometrics.face@1.0-service
 #vendor/bin/hw/wpa_supplicant
-#vendor/bin/imsdatadaemon
-#vendor/bin/imsqmidaemon
-#vendor/bin/imsrcsd
-#vendor/bin/ims_rtp_daemon
 #vendor/bin/ipacm
 vendor/bin/ipacm-diag
 vendor/bin/irsc_util
@@ -134,14 +123,12 @@ vendor/bin/KmInstallKeybox
 vendor/bin/loc_launcher
 vendor/bin/logwrapper
 vendor/bin/lowi-server
-#vendor/bin/mlid
-#vendor/bin/mm-pp-dpps
 vendor/bin/mm-qcamera-app
 vendor/bin/mm-qjpeg-dec-test
 vendor/bin/mm-qjpeg-enc-test
 vendor/bin/mm-qomx-idec-test
 vendor/bin/mm-qomx-ienc-test
-vendor/bin/msm_irqbalance
+#vendor/bin/msm_irqbalance
 vendor/bin/netmgrd
 vendor/bin/pktlogconf
 vendor/bin/PktRspTest
@@ -150,9 +137,6 @@ vendor/bin/pm-service
 vendor/bin/ptt_socket_app
 vendor/bin/qjpeg-dma-test
 #vendor/bin/qmi-framework-tests/qmi_test_mt_client_init_instance
-#vendor/bin/qrtr-cfg
-#vendor/bin/qrtr-lookup
-#vendor/bin/qrtr-ns
 vendor/bin/qseecomd
 vendor/bin/qseecom_sample_client
 vendor/bin/rmt_storage
@@ -163,8 +147,6 @@ vendor/bin/sh
 vendor/bin/sigma_dut
 vendor/bin/SoterProvisioningTool
 vendor/bin/spectraltool
-#vendor/bin/ssgqmigd
-#vendor/bin/ssgtzd
 vendor/bin/ssr_diag
 vendor/bin/ssr_setup
 vendor/bin/StoreKeybox
@@ -179,7 +161,6 @@ vendor/bin/time_daemon
 vendor/bin/toolbox
 vendor/bin/toybox_vendor
 #vendor/bin/vaultkeeperd
-#vendor/bin/vendor.qti.hardware.soter@1.0-provision
 #vendor/bin/vendor.samsung.hardware.security.vaultkeeper@1.0-service
 vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/bin/vendor_cmd_tool
@@ -190,8 +171,6 @@ vendor/bin/wdsdaemon
 vendor/bin/wpa_cli
 vendor/bin/wvkprov
 vendor/bin/xtra-daemon
-#vendor/bin/xtwifi-client
-#vendor/bin/xtwifi-inet-agent
 #vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
 vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_General_cal.acdb
@@ -449,7 +428,6 @@ vendor/etc/init/android.hardware.health@2.0-service.samsung.rc
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
 vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 #vendor/etc/init/android.hardware.memtrack@1.0-service.rc
-vendor/etc/init/android.hardware.nfc@1.2-service.sec.rc
 #vendor/etc/init/android.hardware.power@1.0-service.rc
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
@@ -459,11 +437,10 @@ vendor/etc/init/dataadpl.rc
 vendor/etc/init/dpmQmiMgr.rc
 #vendor/etc/init/hostapd.android.rc
 vendor/etc/init/init-qcril-data.rc
-vendor/etc/init/init.nfc.vendor.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/init.vendor.onebinary.rc
-#vendor/etc/init/init.vendor.rilchip.rc
+vendor/etc/init/init.vendor.rilchip.rc
 vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/ipacm.rc
@@ -489,8 +466,6 @@ vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_qcom.rc
 #vendor/etc/IPACM_cfg.xml
 vendor/etc/izat.conf
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-sec-vendor.conf
 vendor/etc/locale/plmn_delta_eng.bin
 vendor/etc/locale/plmn_delta_zh-rCN.bin
 vendor/etc/locale/plmn_delta_zh-rHK.bin
@@ -542,8 +517,6 @@ vendor/etc/mkshrc
 vendor/etc/msm_irqbalance.conf
 vendor/etc/msm_irqbalance_little_big.conf
 vendor/etc/mtu-conf.xml
-vendor/etc/nfc/sec_s3nrn74_hwreg.bin
-vendor/etc/nfc/sec_s3nrn74_swreg.bin
 vendor/etc/pdpcnt-conf.xml
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
@@ -597,7 +570,7 @@ vendor/etc/tms_audio_policy_configuration.xml
 vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
 vendor/etc/vintf/manifest/android.hardware.cas@1.1-service.xml
 vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
-vendor/etc/vintf/manifest/android.hardware.usb@1.1-service.wahoo450.xml
+#vendor/etc/vintf/manifest/android.hardware.usb@1.1-service.wahoo450.xml
 #vendor/etc/vintf/manifest/vaultkeeper_manifest.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
 #vendor/etc/vintf/manifest/vendor.samsung.hardware.base@1.0-service.xml
@@ -678,7 +651,6 @@ vendor/firmware/mp_ls_panda_swid22.ini
 vendor/firmware/mp_skw_panda.ini
 vendor/firmware/mp_skw_panda_lrpol.ini
 vendor/firmware/mp_txd_inx_ili9882n.ini
-vendor/firmware/nfc/sec_s3nrn74_firmware.bin
 vendor/firmware/nvt_mpfw_pid7211.bin
 vendor/firmware/nvt_mpfw_pid721a.bin
 vendor/firmware/nvt_nomalfw_pid7211.bin
@@ -784,8 +756,8 @@ vendor/lib/hw/keystore.msm8953.so
 #vendor/lib/hw/lights.msm8953.so
 vendor/lib/hw/local_time.default.so
 #vendor/lib/hw/memtrack.msm8953.so
-#vendor/lib/hw/power.default.so
-#vendor/lib/hw/power.qcom.so
+vendor/lib/hw/power.default.so
+vendor/lib/hw/power.qcom.so
 vendor/lib/hw/thermal.msm8953.so
 vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -793,7 +765,7 @@ vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.qseecom@1.0-impl.so
-vendor/lib/hw/vendor.samsung.hardware.audio@1.0-impl.so
+#vendor/lib/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 #vendor/lib/hw/vendor.samsung.hardware.light@3.0-impl.so
 #vendor/lib/hw/vibrator.default.so
@@ -2311,7 +2283,6 @@ vendor/lib/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib/mediacas/libclearkeycasplugin.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/nfc_nci_sec-jdm.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
@@ -2395,7 +2366,7 @@ vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 #vendor/lib/vendor.samsung.frameworks.security.dsms@1.0.so
-vendor/lib/vendor.samsung.hardware.audio@1.0.so
+#vendor/lib/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib/vendor.samsung.hardware.base@1.0.so
 #vendor/lib/vendor.samsung.hardware.biometrics.face@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
@@ -2403,7 +2374,6 @@ vendor/lib/vendor.samsung.hardware.health@1.0.so
 #vendor/lib/vendor.samsung.hardware.light@3.0.so
 #vendor/lib/vendor.samsung.hardware.media.converter@1.0.so
 #vendor/lib/vendor.samsung.hardware.miscpower@2.0.so
-vendor/lib/vendor.samsung.hardware.nfc@2.0.so
 vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
 vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
@@ -2497,8 +2467,8 @@ vendor/lib64/hw/libRbsFlow.so
 #vendor/lib64/hw/lights.msm8953.so
 vendor/lib64/hw/local_time.default.so
 #vendor/lib64/hw/memtrack.msm8953.so
-#vendor/lib64/hw/power.default.so
-#vendor/lib64/hw/power.qcom.so
+vendor/lib64/hw/power.default.so
+vendor/lib64/hw/power.qcom.so
 vendor/lib64/hw/thermal.msm8953.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
@@ -2510,7 +2480,7 @@ vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 #vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 #vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
-vendor/lib64/hw/vendor.samsung.hardware.audio@1.0-impl.so
+#vendor/lib64/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 #vendor/lib64/hw/vendor.samsung.hardware.light@3.0-impl.so
 #vendor/lib64/hw/vibrator.default.so
@@ -2973,7 +2943,7 @@ vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 #vendor/lib64/vendor.samsung.frameworks.security.dsms@1.0.so
-vendor/lib64/vendor.samsung.hardware.audio@1.0.so
+#vendor/lib64/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.health@1.0.so
@@ -2985,7 +2955,7 @@ vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib64/vendor.samsung.hardware.radio@2.0.so
 #vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
 #vendor/lib64/vendor.samsung.hardware.security.vaultkeeper@1.0.so
-vendor/lib64/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
+#vendor/lib64/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
 #vendor/lib64/vendor.samsung.hardware.vibrator@2.0.so
 #vendor/lib64/vendor.samsung.hardware.wifi.hostapd@2.0.so
 #vendor/lib64/vendor.samsung.hardware.wifi.supplicant@2.0.so

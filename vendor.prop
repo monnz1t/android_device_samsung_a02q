@@ -120,4 +120,3 @@ ro.config.freelimit_val=11
 ro.config.custom_sw_limit=400
 ro.config.dha_cached_min=3
 ro.sf.lcd_density=280
-
