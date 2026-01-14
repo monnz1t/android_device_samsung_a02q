@@ -9,36 +9,6 @@ lib/libaptX_encoder.so
 # TimeServices
 -vendor/app/TimeService/TimeService.apk
 
-# Prebuilt Modules
-vendor/lib/modules/audio_adsp_loader.ko
-vendor/lib/modules/audio_analog_cdc.ko
-vendor/lib/modules/audio_apr.ko
-vendor/lib/modules/audio_cpe_lsm.ko
-vendor/lib/modules/audio_digital_cdc.ko
-vendor/lib/modules/audio_fs1894.ko
-vendor/lib/modules/audio_hdmi.ko
-vendor/lib/modules/audio_machine_ext_sdm450.ko
-vendor/lib/modules/audio_machine_sdm450.ko
-vendor/lib/modules/audio_mbhc.ko
-vendor/lib/modules/audio_native.ko
-vendor/lib/modules/audio_pinctrl_wcd.ko
-vendor/lib/modules/audio_platform.ko
-vendor/lib/modules/audio_q6.ko
-vendor/lib/modules/audio_q6_notifier.ko
-vendor/lib/modules/audio_stub.ko
-vendor/lib/modules/audio_swr.ko
-vendor/lib/modules/audio_swr_ctrl.ko
-vendor/lib/modules/audio_usf.ko
-vendor/lib/modules/audio_wcd9335.ko
-vendor/lib/modules/audio_wcd9xxx.ko
-vendor/lib/modules/audio_wcd_core.ko
-vendor/lib/modules/audio_wcd_cpe.ko
-vendor/lib/modules/audio_wsa881x.ko
-vendor/lib/modules/audio_wsa881x_analog.ko
-vendor/lib/modules/modules.alias
-vendor/lib/modules/modules.dep
-vendor/lib/modules/pronto_wlan.ko
-
 # Vendor blobs
 vendor/bin/adpl
 vendor/bin/adsprpcd
@@ -93,7 +63,7 @@ vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/bin/hw/android.hardware.thermal@1.0-service
 #vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
-vendor/bin/hw/android.hardware.wifi@1.0-service
+#vendor/bin/hw/android.hardware.wifi@1.0-service
 #vendor/bin/hw/capabilityconfigstoretest
 #vendor/bin/hw/hostapd
 vendor/bin/hw/macloader
@@ -430,7 +400,7 @@ vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
 #vendor/etc/init/android.hardware.usb@1.1-service.wahoo450.rc
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
+#vendor/etc/init/android.hardware.wifi@1.0-service.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dpmQmiMgr.rc
 #vendor/etc/init/hostapd.android.rc
@@ -1834,7 +1804,7 @@ vendor/lib/libchromatix_s5k5e9_hs50_ofilm_video.so
 vendor/lib/libchromatix_s5k5e9_hs50_ofilm_video_a3.so
 vendor/lib/libchromatix_s5k5e9_hs50_ofilm_zsl_preview_a3.so
 vendor/lib/libchromatix_s5k5e9_hs50_ofilm_zsl_video_a3.so
-vendor/lib/libcld80211.so
+#vendor/lib/libcld80211.so
 vendor/lib/libconfigdb.so
 vendor/lib/libcpion.so
 vendor/lib/libcppf.so
@@ -2269,10 +2239,10 @@ vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libvqzip.so
 vendor/lib/libwebrtc_audio_preprocessing.so
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
-vendor/lib/libwifi-hal.so
-vendor/lib/libwpa_client.so
+#vendor/lib/libwifi-hal-ctrl.so
+#vendor/lib/libwifi-hal-qcom.so
+#vendor/lib/libwifi-hal.so
+#vendor/lib/libwpa_client.so
 vendor/lib/libwvhidl.so
 vendor/lib/libxcv.camera.samsung.so
 vendor/lib/libxml.so
@@ -2538,7 +2508,7 @@ vendor/lib64/libCB.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libcdsp_default_listener.so
 #vendor/lib64/libchiponeic_fingerprint_factory.so
-vendor/lib64/libcld80211.so
+#vendor/lib64/libcld80211.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -2824,11 +2794,11 @@ vendor/lib64/libvndsecril-client.so
 #vendor/lib64/libwa_megface.so
 #vendor/lib64/libwa_rtdof.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
+#vendor/lib64/libwifi-hal-ctrl.so
+#vendor/lib64/libwifi-hal-qcom.so
+#vendor/lib64/libwifi-hal.so
 vendor/lib64/libwms.so
-vendor/lib64/libwpa_client.so
+#vendor/lib64/libwpa_client.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxcv.camera.samsung.so
 vendor/lib64/libxml.so

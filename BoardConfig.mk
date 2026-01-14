@@ -77,14 +77,10 @@ BOARD_MKBOOTIMG_ARGS += \
 	--header_version $(BOARD_BOOT_HEADER_VERSION) \
 	--dtb $(TARGET_PREBUILT_DTB)
 
-# NOTE: Since Samsung removed the kernel from the A02S in the latest version of Android 10,
-# we will have to use the prebuilt kernel, and LineageOS doesn't allow that. Therefore, 
-# we'll have to work around this by using the kernel from another device.
-
-# Kernel config - Temporarily until Samsung responds to the email.
+# Kernel config
 TARGET_KERNEL_VERSION := 4.9
-TARGET_KERNEL_CONFIG := m11q_open_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_CONFIG := samsung/a02q_open_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/a02q
 
 # Kernel Toolchain
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-

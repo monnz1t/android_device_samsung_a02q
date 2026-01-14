@@ -291,11 +291,14 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    hostapd \
-    libQWiFiSoftApCfg \
-    libwifi-hal-ctrl \
+    libcld80211 \
     libwpa_client \
-    wcnss_service \
+    hostapd \
+    wificond \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libQWiFiSoftApCfg \
+    wcnss_service  \
     wpa_supplicant \
     wpa_supplicant.conf
 
