@@ -47,7 +47,6 @@ vendor/bin/athdiag
 vendor/bin/audioflacapp
 vendor/bin/awk
 vendor/bin/cdsprpcd
-vendor/bin/cnd
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/bin/cplay
@@ -69,7 +68,6 @@ vendor/bin/fstman
 vendor/bin/ftmdaemon
 vendor/bin/grep
 vendor/bin/hal_proxy_daemon
-vendor/bin/hbtp_daemon
 vendor/bin/hostapd_cli
 vendor/bin/hqread
 vendor/bin/hvdcp_opti
