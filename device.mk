@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
 	init.hq.shipping.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
-    init.a02q.rc \
     init.qcom.usb.rc \
 	init.samsung.bsp.rc \
 	init.samsung.rc \
