@@ -42,9 +42,6 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# Product characteristics
-PRODUCT_CHARACTERISTICS := default
-
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -56,11 +53,9 @@ PRODUCT_PACKAGES += \
     zram.fstab \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
-	init.a02q.rc \
-    init.msm.usb.configfs.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
-    init.qcom.rc \
+    init.a02q.rc \
     init.qcom.usb.rc \
 	init.samsung.bsp.rc \
 	init.samsung.rc \
@@ -71,7 +66,6 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
@@ -79,19 +73,9 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    init.qti.can.sh \
     init.qti.fm.sh \
-    init.qti.ims.sh \
     init.qti.qseecomd.sh \
     qca6234-service.sh
-
-# Samsung Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
-# TimeService (Prebuilt)
-PRODUCT_PACKAGES += \
-    TimeService
 
 # Recovery
 PRODUCT_COPY_FILES += \
@@ -103,7 +87,6 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -118,7 +101,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
@@ -135,23 +117,28 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# BLuetooth
+# Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@5.0-impl.a02s \
-    android.hardware.audio@2.0-service:32 \
-    android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.bluetooth.audio@2.0-impl \
-    audio.r_submix.default \
-    audio.bluetooth.default \
-    audio.usb.default \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing
+    android.hardware.audio@6.0-impl.a02q:32 \
+    android.hardware.audio.service:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.1-impl:32 \
+    audio.r_submix.default:32 \
+    audio.usb.default:32 \
+    liba2dpoffload:32 \
+    libhdmiedid:32 \
+    libhfp:32 \
+    libqcompostprocbundle:32 \
+    libqcomvisualizer:32 \
+    libqcomvoiceprocessing:32 \
+    libeffectsconfig:32 \
+    libsndmonitor:32 \
+    libspkrprot:32 \
+    libtinycompress:32
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
@@ -163,23 +150,51 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor:32 \
+    android.hardware.bluetooth.a2dp@1.0.vendor:32 \
+    android.hardware.bluetooth.audio@2.0-impl:32 \
+    audio.bluetooth.default:32 \
+    libbt-hidlclient:32 \
+    vendor.qti.hardware.btconfigstore@1.0.vendor:32 \
+    vendor.qti.hardware.btconfigstore@2.0.vendor:32
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor:32
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss.measurement_corrections@1.1.vendor:32 \
+    android.hardware.gnss.visibility_control@1.0.vendor:32 \
+    android.hardware.gnss@2.1.vendor:32
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor:32
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1.vendor:32
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    gralloc.msm8953 \
     hwcomposer.msm8953 \
+    gralloc.msm8953 \
     memtrack.msm8953 \
-    libdisplayconfig \
-    liboverlay \
-    libqdMetaData.system \
-    libgenlock \
-    libtinyxml
+    libdisplayconfig.qti \
+    libgralloc.qti \
+    libqdMetaData \
+    libtinyxml \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@2.0.vendor
 
 # Config Store
 PRODUCT_PACKAGES += \
@@ -193,35 +208,42 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    libhidltransport.vendor \
+    libhwbinder.vendor
 
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/) \
-
-# Additional native libraries
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# Lineage Trust HAL
+# Light
 PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+    android.hardware.light-service.samsung
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
+    android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    vendor.qti.hardware.camera.device@1.0.vendor
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.3.vendor:32
+
+# Capability Configstore
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor:32
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.4-service.clearkey \
+    android.hardware.drm@1.4.vendor
+
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -235,23 +257,24 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
+    android.hardware.power-service-qti-a02q \
+    android.hardware.power@1.2.vendor \
+    vendor.qti.hardware.perf@2.2.vendor:32
 
-# Lights
+# Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
-    lights.msm8953
+    android.hardware.sensors@1.0-impl:32 \
+    android.hardware.sensors@1.0-service-a02q
 
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v30.so
 
-# RenderScript
+# Radio
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
+    libavservices_minijail.vendor \
+    libjson \
+    librmnetctl
 
 # RIL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -259,9 +282,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.radio.noril=no
 
 PRODUCT_PACKAGES += \
-    librmnetctl \
-    libcnefeatureconfig \
+    android.hardware.radio@1.4.vendor:32 \
+    android.hardware.radio.config@1.2.vendor:32 \
+    android.hardware.radio.deprecated@1.0.vendor:32 \
+    android.hardware.secure_element@1.0.vendor:32 \
     libxml2 \
+    libcutils_shim
+
+# Telephony
+PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
@@ -271,10 +300,38 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# IRSC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/keylayout/,$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/) \
+
+# Additional native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Omx
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxG711Enc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libc2dcolorconvert \
+    libmm-omxcore \
+    libstagefrighthw
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc) \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
@@ -297,14 +354,12 @@ PRODUCT_PACKAGES += \
     wificond \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    libQWiFiSoftApCfg \
     wcnss_service  \
     wpa_supplicant \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/firmware/,$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima) \
-    $(LOCAL_PATH)/configs/wifi/fstman.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/fstman.ini \
     $(LOCAL_PATH)/configs/wifi/grippower.info:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/grippower.info \
     $(LOCAL_PATH)/configs/wifi/indoorchannel.info:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/indoorchannel.info \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
@@ -314,17 +369,6 @@ PRODUCT_COPY_FILES += \
 # Seccomp policies
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
-
-# For userdebug builds
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.secure=0 \
-	ro.adb.secure=0 \
-	ro.debuggable=1 \
-	persist.sys.root_access=1 \
-	persist.service.adb.enable=1
-
-#PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=adb
 
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/a02q/a02q-vendor.mk)

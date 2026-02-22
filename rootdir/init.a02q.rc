@@ -27,26 +27,42 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #
+
 on boot
 # SSWAP
     write /proc/sys/vm/swappiness 160
 
-# SSWAP
-service swapon /sbin/sswap -s -z -f 1536
-    class core
-    user root
-    group root
-    seclabel u:r:sswap:s0
-    oneshot
+# SQZR
+on property:sys.boot_completed=1
+    swapon_all /vendor/etc/fstab.sqzr
 
-# SIMLock Daemon
-service rsudaemon /system/bin/rsudaemon
-    class core
+# Pageboostd
+on property:sys.boot_completed=1
+    start pageboostd
+
+service pageboostd /system/bin/pageboostd
+    class main
     user system
-    group system
-    oneshot
+    group system mount radio net_bt sdcard_rw shell media media_rw
+    socket pageboostd seqpacket 0660 system system
     disabled
-on property:ro.boot.carrierid=ATT
-    start rsudaemon
+
+# SSU (Samsung SIM Unlock)
+on property:ro.boot.carrierid=VZW
+    setprop ssu.support 1
+on property:ro.boot.carrierid=TMB
+    setprop ssu.support 1
+on property:ro.boot.carrierid=TMK
+    setprop ssu.support 1
+on property:ro.boot.carrierid=USC
+    setprop ssu.support 1
+on property:ro.boot.carrierid=APP
+    setprop ssu.support 1
 on property:ro.boot.carrierid=AIO
-    start rsudaemon
+    setprop ssu.support 1
+	
+# Create carrier folder for HiddenMenu
+on post-fs
+    mkdir /efs/carrier 0755 radio system
+    chown radio system /efs/carrier
+    chown radio system /efs/carrier/HiddenMenu

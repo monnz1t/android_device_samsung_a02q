@@ -10,7 +10,7 @@ Status: Work In Progress
  SoC | Qualcomm MSM8953 Snapdragon 450
  CPU | Octa core (1.8 GHz)
  GPU | Adreno 506
- Memory | 1 - 4 GB RAM
+ Memory | 1/2/3/4 GB RAM
  Shipped Android Version | 10.0
  Storage | 16 / 32 / 64GB
  MicroSD | Up to 512 GB (dedicated slot)
