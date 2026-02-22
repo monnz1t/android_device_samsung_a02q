@@ -1,7 +1,7 @@
 Device tree for the Samsung Galaxy A02s/M02s
 =================================================
 
-Status: Work In Progress
+Status: Vendor VNDK32 Booted
 
   ## Device Specifications
  
