@@ -427,16 +427,6 @@
         <fqname>@1.0::ITuiComm/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.biometrics.face</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehBiometricsFace</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehBiometricsFace/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.gnss</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -445,16 +435,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.0::ISehGnss/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.media.converter</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehColorConverterStore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehColorConverterStore/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.miscpower</name>
@@ -518,16 +498,6 @@
         <fqname>@2.0::ISehChannel/imsd</fqname>
         <fqname>@2.0::ISehChannel/imsd2</fqname>
     </hal>
-    <hal format="hidl" override="true">
-        <name>vendor.samsung.hardware.security.drk</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehDrk</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehDrk/default</fqname>
-    </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.security.widevine.keyprov</name>
         <transport>hwbinder</transport>
@@ -539,16 +509,6 @@
         <fqname>@1.0::ISehWidevineKeyProvisioning/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.sysinput</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>ISehSysInputDev</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.1::ISehSysInputDev/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.vibrator</name>
         <transport>hwbinder</transport>
         <version>2.2</version>
@@ -557,15 +517,5 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.2::ISehVibrator/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.supplicant</name>
-        <transport>hwbinder</transport>
-        <version>3.0</version>
-        <interface>
-            <name>ISehSupplicant</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@3.0::ISehSupplicant/default</fqname>
     </hal>
 </manifest>
