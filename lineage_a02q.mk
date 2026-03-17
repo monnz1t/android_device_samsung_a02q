@@ -22,11 +22,18 @@ $(call inherit-product, device/samsung/a02q/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+PRODUCT_CHARACTERISTICS := default
+
 PRODUCT_DEVICE := a02q
 PRODUCT_NAME := lineage_a02q
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A025F
 PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_SYSTEM_NAME := a02qnnxx
+
+TARGET_VENDOR := samsung
+TARGET_VENDOR_PRODUCT_NAME := a02q
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 

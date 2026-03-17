@@ -1662,11 +1662,12 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib/vendor.qti.esepowermanager@1.1.so
 
 # FM
-app/FmTest/lib/arm64/fm_helium.so:system_ext/lib64/fm_helium.so
-app/FmTest/lib/arm64/libfm-hci.so:system_ext/lib64/libfm-hci.so
-app/FmTest/lib/arm64/vendor.qti.hardware.fm@1.0.so:system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Fingerprint
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # Firmware
 etc/firmware/ice40.bin:vendor/firmware/ice40.bin
@@ -2035,13 +2036,6 @@ vendor/lib/libstreamparser.so
 vendor/lib64/libUBWC.so
 vendor/lib64/libstreamparser.so
 
-# Vibrator
-vendor/bin/hw/vendor.samsung.hardware.vibrator@2.2-service
-vendor/etc/init/vendor.samsung.hardware.vibrator@2.2-service.rc
-vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
-vendor/lib/vendor.samsung.hardware.vibrator@2.1.so
-vendor/lib/vendor.samsung.hardware.vibrator@2.2.so
-
 # Voice
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
@@ -2145,10 +2139,6 @@ vendor/etc/media_codecs_ac4.xml
 vendor/etc/media_codecs_ddp.xml
 vendor/etc/media_codecs_performance_8953.xml
 vendor/etc/media_codecs_performance_8953_v1.xml
-vendor/etc/media_codecs_sec_ape.xml
-vendor/etc/media_codecs_sec_primary.xml
-vendor/etc/media_codecs_sec_qcp.xml
-vendor/etc/media_codecs_sec_video_primary.xml
 vendor/etc/media_codecs_vendor.xml
 vendor/etc/media_codecs_vendor_audio.xml
 vendor/etc/media_profiles.xml
